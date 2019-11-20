@@ -1,0 +1,280 @@
+body {   
+   font: 100% Helvetica, Arial, sans-serif;
+   width: 100%;
+   padding: 0;
+   margin: 0;
+   margin-top: -18px;
+   height: 100%;
+   background-color: #932822;
+}
+
+.hidden {
+   display: none;
+}
+
+
+#header-img {
+   position: relative;
+   left: 3.5%;
+   right: 5%;
+   top: 18%;
+   /* margin-top: 1%; */
+   display: inline-block;
+}
+
+#header {
+   position: relative;
+   height: 100px;
+   background-color: #932822;
+   /* background-image: url("fremviser.png"); */
+   background-repeat: no-repeat;
+   color: black;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   /* padding-bottom: 2%; */
+}
+.search {
+   float: right;
+   /*	position: relative;
+   top: 57px;
+   right: 5px; */
+}
+#header h1 {
+   position: relative;
+   display: inline-block;
+   top: 6%;
+   font-size: 55px;
+   font-family: "Courier New", monospace;
+   margin: 0;
+   /* padding-left: 10%; */
+   /* padding-top: 45px; */
+   /* padding-left: 20%; */
+   /* padding-top: 5%; */
+   /* top: 30%; */
+   left: 38%;
+   transform: translate(-50%, 0);
+}
+
+body {
+   text-align: center;
+}
+#page {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   text-align: left;
+   color: #404040;
+}
+#nav {
+   padding-top: 2%;
+   margin-left: 2.8%;
+   float: left;
+   padding-left: 2%;
+}
+
+#nav ul {
+   padding: 0;
+   list-style-type: none;
+   text-align: center;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+#content {
+   float: right;
+   /* width: 640px; */
+   width: 50%;
+}
+
+a:link {
+   text-decoration: none
+}
+
+a:visited {
+   text-decoration: none
+}
+
+a:active {
+   text-decoration: none
+}
+
+a:hover {
+   text-decoration: underline; color: #BF0000;
+}
+
+#nav a {
+   /* color: #404040; */
+   color: black;
+}
+
+hr {
+   color #404040;
+   color: black;
+   background: #404040;
+   border: 0;
+}
+
+#footer {
+   clear: both;
+   background-color: #932822;
+   text-align: center;
+   color: #932829;
+}
+#footer a {
+   color: #005;
+}
+
+input {
+   border: 1px solid #ddd;
+}
+
+.del {
+   background: #FF4D4A;
+}
+
+.ins {
+   background: #F9FF4A;
+}
+
+
+/* Drop-down for mobil */
+#overlay-button {
+   text-align: left;
+   position: absolute;
+   right: 2em;
+   top: 3em;
+   padding: 26px 11px;
+   z-index: 5;
+   cursor: pointer;
+   user-select: none;
+}
+
+#overlay-button span {
+   height: 4px;
+   width: 35px;
+   border-radius: 2px;
+   background-color: white;
+   position: relative;
+   display: block;
+   transition: all .2s ease-in-out;
+}
+
+#overlay-button span:before {
+   top: -6px;
+   visibility: visible;
+}
+
+#overlay-button span:after {
+   top: 6px;
+}
+
+#overlay-button span:before, #overlay-button span:after {
+   height: 4px;
+   width: 35px;
+   border-radius: 2px;
+   background-color: white;
+   position: absolute;
+   content: "";
+   transition: all .2s ease-in-out;
+}
+
+#overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after { 
+   background: #FFFFFF;
+}
+
+input[type=checkbox] {
+   display: none;
+}
+
+input[type=checkbox]:checked ~ #overlay {
+   /* visibility: visible; */
+   /* background: #87cc77; */
+   opacity: 1;
+   background: black;
+   transition: all .5s;
+}
+
+input[type=checkbox] ~ #overlay-button:hover span, input[type=checkbox] ~ #overlay-button span {
+   background: transparent;
+}
+
+input[type=checkbox]:checked ~ #overlay-button span:before {
+   transform: translateY(16px) rotate(-45deg) translate(7px, 7px); 
+   transition: all 1s;
+}
+
+input[type=checkbox]:checked ~ #overlay-button span:after {
+   transform: translateY(-16px) rotate(45deg) translate(7px, -7px); 
+   transition: all 1s;
+}
+
+#overlay {
+   height: 100vh;
+   width: 100vw;
+   /* background: #ec6451; */
+   z-index: 2;
+   background: black;
+   /* visibility: hidden; */
+   opacity: 0;
+   position: fixed;
+   transition: background .5s;
+   transition: opacity .5s;
+}
+
+#overlay.active {
+   visibility: visible;
+}
+
+#overlay ul {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   text-align: center;
+   height: 100vh;
+   padding-left: 0;
+   list-style-type: none;
+   font-family: "Courier New", monospace;
+}
+
+#overlay ul li {
+   padding: 1em;
+}
+
+#overlay ul li a {
+   color: #932822;
+   text-decoration: none;
+   font-size: 1.5em;
+}
+
+#overlay ul li a:hover {
+   color: #333332;
+}
+
+#mobil {
+   display: none;
+}
+
+@media only screen and (max-width: 900px) {
+   #mobil {
+      display: block;
+   }
+
+   #header h1 {
+      position: absolute;
+      font-size: 7vw;
+      right: 10%;
+      top: 58%;
+   }
+
+   #header-img {
+      height: 50%;
+      display: none;
+   }
+
+   #nav {
+      display: none;
+   }
+}
