@@ -8,6 +8,11 @@ body {
    background-color: #932822;
 }
 
+* {
+   /* border: 1px solid red; */
+   /* box-sizing: border-box; */
+}
+
 .hidden {
    display: none;
 }
@@ -174,7 +179,10 @@ input {
    height: 4px;
    width: 35px;
    border-radius: 2px;
-   background-color: white;
+   /* height: 1px; */
+   /* width: 17px; */
+   /* border-radius: .5px; */
+   background-color: black;
    position: absolute;
    content: "";
    transition: all .2s ease-in-out;
@@ -201,13 +209,24 @@ input[type=checkbox] ~ #overlay-button:hover span, input[type=checkbox] ~ #overl
 }
 
 input[type=checkbox]:checked ~ #overlay-button span:before {
-   transform: translateY(16px) rotate(-45deg) translate(7px, 7px); 
-   transition: all 1s;
+   transform-origin: 50% 50%;
+   transform: rotate(-45deg);
+   top: 0;
+   transition: 
+      /* top .1s ease-in-out 0s, */
+      top .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96),
+      transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
 }
 
 input[type=checkbox]:checked ~ #overlay-button span:after {
-   transform: translateY(-16px) rotate(45deg) translate(7px, -7px); 
-   transition: all 1s;
+   transform-origin: 50% 50%;
+   transform: rotate(45deg);
+   top: 0;
+   transition: 
+      /* top .1s ease-in-out 0s, */
+      /* transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s; */
+      top .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96),
+      transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
 }
 
 #overlay {
@@ -264,9 +283,12 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
    #header h1 {
       position: absolute;
+      padding: 0;
+      margin: 0;
       font-size: 7vw;
-      right: 10%;
       top: 58%;
+      left: 45%;
+      /* left: 50%; */
    }
 
    #header-img {
