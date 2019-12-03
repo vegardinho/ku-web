@@ -50,6 +50,7 @@ body {
    position: absolute;
    left: 50%;
    transform: translate(-50%, 0);
+   -webkit-transform: translate(-50%, 0);
    top: 2.4em;
    z-index: 5;
 }
@@ -156,16 +157,20 @@ input {
    position: relative;
    display: block;
    transform-origin: 50% 50%;
+   -webkit-transform-origin: 50% 50%;
 }
 
 /* Utgangsposisjon for øvre strek i kryss */
 #overlay-button span:before {
    transform-origin: 50% 50%;
+   -webkit-transform-origin: 50% 50%;
    top: -4px;
    transform: rotate(0deg);
+   -webkit-transform: rotate(0deg);
    background-color: black;
    transition: 
    transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96),
+   -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96),
    top .2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1608s,
    background-color .5192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1508s;
 }
@@ -173,11 +178,14 @@ input {
 /* Utgangsposisjon for nedre strek i kryss */
 #overlay-button span:after {
    transform-origin: 50% 50%;
+   -webkit-transform-origin: 50% 50%;
    top: 5px;
    transform: rotate(0deg);
+   -webkit-transform: rotate(0deg);
    background-color: black;
    transition: 
    transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96),
+   -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96),
    top .2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1608s,
    background-color .5192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1508s;
 }
@@ -216,24 +224,30 @@ input[type=checkbox] ~ #overlay-button:hover span, input[type=checkbox] ~ #overl
 /* Roter øverste strek ved trykk */
 input[type=checkbox]:checked ~ #overlay-button span:before {
    transform-origin: 50% 50%;
+   -webkit-transform-origin: 50% 50%;
    transform: rotate(-45deg);
+   -webkit-transform: rotate(-45deg);
    top: 0;
    background: white;
    transition: 
    top .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96),
    transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1608s,
+   -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1608s,
    background .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
 }
 
 /* Roter nederste kryss ved trykk */
 input[type=checkbox]:checked ~ #overlay-button span:after {
    transform-origin: 50% 50%;
+   -webkit-transform-origin: 50% 50%;
    transform: rotate(45deg);
+   -webkit-transform: rotate(45deg);
    top: 0;
    background: white;
    transition: 
    top .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96),
    transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1608s,
+   -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1608s,
    background .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
 }
 
@@ -266,12 +280,13 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 /* Standardstil for listeelementene. Flyttes og skaleres til siden ved lukking */
 #mobil-overlay > ul > li {
    padding: 1.2em;
-   -webkit-transform: scale(1.15) translateY(-10%) translateX(-10%);
    transform: scale(1.15) translateY(-10%) translateX(-10%);
+   -webkit-transform: scale(1.15) translateY(-10%) translateX(-10%);
    opacity: 0;
    transition: 
    padding 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
    transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
+   -webkit-transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
    opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
    -webkit-transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
@@ -298,8 +313,8 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
    /* transition-delay: 0.25s; */
    transition: 
    padding 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
-   transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
    opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
+   transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
    -webkit-transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
 
