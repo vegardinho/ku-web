@@ -364,7 +364,11 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       height: 120%;
       transform: translate(-50%, 0);
       -webkit-transform: translate(-50%, 0);
-      transition: all .5s;
+      transition:
+      left .5s, 
+      top .5s, 
+      transform .5s,
+      -webkit-transform .5s;
    }
 
    #logo-black {
