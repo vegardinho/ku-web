@@ -7,49 +7,52 @@
 
    <head>
       <title>KUs websider</title>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="style-local.css" media="screen" title="Normal" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="js/menu-opener.js" defer></script>
       %META%
    </head>
 
    <body>
-      <div id="mobil">
+
+      <div id="header">
+	 <a id="logo_header" href="header.html">
+	    <img id="logo-black" src="img/ku-logo.png">
+	    <img id="logo-white" src="img/ku-logo-hvit.png">
+	 </a>
+	 <a id="kultur-lenke" href="header.html">
+	    <h1>KULTURUTVALGET</h1>
+	 </a>
 	 <input type="checkbox" id="overlay-input"/>
 	 <label for="overlay-input" id="overlay-button">
 	    <span>
 	    </span>
 	 </label>
-	 <div id="overlay">
-	    <ul>
-	       <li><a href="/arrangement">Arrangement</a></li>
-	       <li><a href="/filmklubben">Filmklubben</a></li>
-	       <!-- <li><a href="/intern">Interne sider</a></li> -->
-	       <li><a href="/om_oss">Om oss</a></li>
-	       <li><a href="/kontakt">Kontakt</a></li>
-	    </ul>
-	 </div>
       </div>
 
-      <div id="page">
-	 <a href="http://ku.samfundet.no">
-	    <div id="header">
-	       <img id="header-img" src="bilder/design/fremviser.png">
-	       <h1>Kulturutvalget</h1>
-	    </div>
-	 </a>
-
-	 <hr class="hidden" />
-	 <div id="nav">
+      <div id="mobil-overlay">
 	    <ul>
-	       <li><a href="/om_oss">Om oss</a></li>
-	       <li><a href="/kontakt">Kontakt</a></li>
 	       <li><a href="/arrangement">Arrangement</a></li>
 	       <li><a href="/filmklubben">Filmklubben</a></li>
 	       <!-- <li><a href="/intern">Interne sider</a></li> -->
+	       <li><a href="/om_oss">Om oss</a></li>
+	       <li><a href="/kontakt">Kontakt</a></li>
 	    </ul>
-	    <hr/>
 	 </div>
 
+      <hr class="hidden" />
+      <div id="nav">
+	 <ul>
+	    <li><a href="/om_oss">Om oss</a></li>
+	    <li><a href="/kontakt">Kontakt</a></li>
+	    <li><a href="/arrangement">Arrangement</a></li>
+	    <li><a href="/filmklubben">Filmklubben</a></li>
+	    <!-- <li><a href="/intern">Interne sider</a></li> -->
+	 </ul>
+	 <hr/>
+      </div>
 
-	 <hr class="hidden" />
-	 <div id="content">
+
+      <hr class="hidden" />
+      <div id="content">
