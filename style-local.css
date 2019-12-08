@@ -47,11 +47,11 @@ body {
 
 #kultur-lenke {
    display: inline-block;
-   position: absolute;
+   position: relative;
    left: 50%;
-   transform: translate(-50%, 0);
-   -webkit-transform: translate(-50%, 0);
-   top: 2.4em;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   -webkit-transform: translate(-50%, -50%);
    z-index: 5;
 }
 
@@ -141,7 +141,8 @@ input {
 #overlay-button {
    position: relative;
    display: inline-block;
-   top: 1.45em;
+   top: 50%;
+   transform: translate(0, -50%);
    right: 1.3em;
    float: right;
    padding: 26px 11px;
@@ -253,7 +254,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
 /* Bakgrunn før trykk på knapp */
 #mobil-overlay {
-   position: fixed;
+   position: absolute;
    width: 100%;
    background: black;
    top: 0;
@@ -266,7 +267,8 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
 /* Stil for listen */
 #mobil-overlay > ul {
-   position: relative;
+   position: fixed;
+   width: 100%;
    top: 5%;
    display: flex;
    justify-content: center;
@@ -349,35 +351,64 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       transition: all .3s;
    }
 
+   /* #logo_header { */
+   /*    display: inline-block; */
+   /*    position: relative; */
+   /*    height: 40%; */
+   /*    top: 1.9em; */
+   /*    left: 2em; */
+   /*    z-index: 10; */
+   /*    transform: scale(1) translate(0, 0); */
+   /*    -webkit-transform: scale(1) translate(0, 0); */
+   /* transition: all .5s; */
+   /* transition: .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .3s; */
+   /* transition: */
+   /*  transform .5s, */
+   /*  -webkit-transform .5s, */
+   /*  left .5s,  */
+   /*  top .5s;  */
+   /* } */
+
    #logo_header {
-      display: inline-block;
-      position: relative;
-      height: 40%;
-      top: 1.9em;
+      position: absolute;
+      height: 40px;
+      top: 50px;
       left: 2em;
       z-index: 10;
-      transform: scale(1) translate(0, 0);
-      -webkit-transform: scale(1) translate(0, 0);
+      transform: scale(1) translate(0, -50%);
+      -webkit-transform: scale(1) translate(0, -50%);
       /* transition: all .5s; */
       /* transition: .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .3s; */
       transition:
-	 transform .5s,
-	 -webkit-transform .5s,
-	 left .5s, 
-	 top .5s; 
+      transform .5s,
+      -webkit-transform .5s,
+      left .5s, 
+      top .5s; 
    }
 
    #header.menu-opened #logo_header {
       left: 50%;
-      top: 170%;
+      top: 25%;
       transform: translate(-50%, 0) scale(3);
       -webkit-transform: translate(-50%, 0) scale(3);
       transition:
-	 transform .5s,
-	 -webkit-transform .5s,
-	 left .5s, 
-	 top .5s; 
+      transform .5s,
+      -webkit-transform .5s,
+      left .5s, 
+      top .5s; 
    }
+
+   /* #header.menu-opened #logo_header { */
+   /*    left: 50%; */
+   /*    top: 170%; */
+   /*    transform: translate(-50%, 0) scale(3); */
+   /*    -webkit-transform: translate(-50%, 0) scale(3); */
+   /*    transition: */
+   /*  transform .5s, */
+   /*  -webkit-transform .5s, */
+   /*  left .5s,  */
+   /*  top .5s;  */
+   /* } */
 
    #logo-black {
       height: 100%;
@@ -394,7 +425,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       transition: opacity .5s cubic-bezier(0.04, 0.04, 0.12, 0.96) .6s;
    }
 
-   #header.menu-opened #tlogo_header #logo-black {
+   #header.menu-opened #logo_header #logo-black {
       opacity: 0;
    }
 
@@ -409,12 +440,26 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 }
 
 @media only screen and (max-height: 600px) {
-
-   #header.menu-opened #logo_header {
-      top: 140%;
-   }
-
    #mobil-overlay > ul {
       top: 10%;
    }
+
+   #header h1 {
+      font-size: 15px;
+   }
 }
+
+@media only screen and (min-height: 750px) {
+   #header.menu-opened #logo_header {
+      top: 30%;
+   }
+}
+
+@media only screen and (min-height: 850px) {
+   #mobil-overlay > ul {
+      top: -1.5%;
+   }
+
+   #header.menu-opened #logo_header {
+      top: 30%;
+   }
