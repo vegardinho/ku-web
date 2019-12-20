@@ -5,6 +5,7 @@ function addOpenedTag(event) {
    var overlay = document.getElementById("mobil-overlay");
    var overlayClasses = overlay.classList;
    var headerClasses = document.getElementById("header").classList;
+   var contentClasses = document.getElementById("content").classList;
 
    if (overlayClasses.contains("menu-opened")) {
       var listElements = overlay.children[0].children;
@@ -20,6 +21,7 @@ function addOpenedTag(event) {
 
       overlayClasses.remove("menu-opened");
       headerClasses.remove("menu-opened");
+      contentClasses.remove("menu-opened");
 
    } else {
       var listElements = overlay.children[0].children;
@@ -34,5 +36,6 @@ function addOpenedTag(event) {
 
       overlayClasses.add("menu-opened");
       headerClasses.add("menu-opened");
+      contentClasses.add("menu-opened");
    }
 }
