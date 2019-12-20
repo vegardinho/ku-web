@@ -428,7 +428,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
 @media only screen and (max-height: 600px) {
    #mobil-overlay > ul {
-      padding-top: 60%;
+      padding-top: 55%;
    }
 
    #header h1 {
