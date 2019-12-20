@@ -81,12 +81,6 @@ body {
    font-size: 20px;
 }
 
-#content {
-   float: right;
-   /* width: 640px; */
-   width: 50%;
-}
-
 a:link {
    text-decoration: none
 }
@@ -104,8 +98,7 @@ a:active {
 }
 
 
-#nav a {
-   /* color: #404040; */
+a {
    color: black;
 }
 
@@ -148,7 +141,7 @@ input {
    right: 1.3em;
    float: right;
    padding: 26px 11px;
-   z-index: 5;
+   z-index: 9;
    /* cursor: pointer; */
    user-select: none;
 }
@@ -334,8 +327,13 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       display: block;
    }
 
+   .search {
+      display: none;
+   }
+
    #header {
       transition: all 1.5s;
+      height: 115px;
    }
 
    #header h1 {
@@ -354,28 +352,27 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       transition: all .3s;
    }
 
-   /* #logo_header { */
-   /*    display: inline-block; */
-   /*    position: relative; */
-   /*    height: 40%; */
-   /*    top: 1.9em; */
-   /*    left: 2em; */
-   /*    z-index: 10; */
-   /*    transform: scale(1) translate(0, 0); */
-   /*    -webkit-transform: scale(1) translate(0, 0); */
-   /* transition: all .5s; */
-   /* transition: .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .3s; */
-   /* transition: */
-   /*  transform .5s, */
-   /*  -webkit-transform .5s, */
-   /*  left .5s,  */
-   /*  top .5s;  */
-   /* } */
+   #content {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      opacity: 1;
+      transition: opacity .9s cubic-bezier(0.04, 0.04, 0.12, 0.96) .4s;
+   }
+
+   #content h1 {
+      font-size: 20px;
+   }
+
+   #content.menu-opened {
+      opacity: 0;
+      transition: all .3s;
+   }
 
    #logo_header {
       position: absolute;
       height: 40px;
-      top: 50px;
+      top: 40px;
       left: 2em;
       z-index: 10;
       transform: scale(1) translate(0, -50%);
@@ -391,7 +388,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
    #header.menu-opened #logo_header {
       left: 50%;
-      top: 25%;
+      top: 20%;
       transform: translate(-50%, 0) scale(3);
       -webkit-transform: translate(-50%, 0) scale(3);
       transition:
@@ -400,18 +397,6 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       left .5s, 
       top .5s; 
    }
-
-   /* #header.menu-opened #logo_header { */
-   /*    left: 50%; */
-   /*    top: 170%; */
-   /*    transform: translate(-50%, 0) scale(3); */
-   /*    -webkit-transform: translate(-50%, 0) scale(3); */
-   /*    transition: */
-   /*  transform .5s, */
-   /*  -webkit-transform .5s, */
-   /*  left .5s,  */
-   /*  top .5s;  */
-   /* } */
 
    #logo-black {
       height: 100%;
