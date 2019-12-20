@@ -358,7 +358,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       margin: auto;
       text-align: center;
       opacity: 1;
-      transition: opacity .9s cubic-bezier(0.04, 0.04, 0.12, 0.96) .4s;
+      transition: opacity .9s cubic-bezier(0.04, 0.04, 0.12, 0.96) .55s;
    }
 
    #content h1 {
