@@ -375,8 +375,9 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       left: 2em;
       z-index: 10;
       transform: scale(1) translate(0, -50%);
-      /* -webkit-transform: scale(1) translate(0, -50%); */
-      -webkit-transform: translate(0, -50%) perspective(500px) translateZ(0px);
+      -webkit-transform: scale(1) translate(0, -50%);
+      will-change: transform;
+      /* -webkit-transform: translate(0, -50%) perspective(500px) translateZ(0px); */
       transition:
       transform .5s,
       -webkit-transform .5s,
@@ -388,8 +389,9 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       left: 50%;
       top: 22%;
       transform: translate(-50%, 0) scale(3);
-      /* -webkit-transform: translate(-50%, 0) scale(3); */
-      -webkit-transform: translate(0, -50%) perspective(500px) translateZ(250px);
+      -webkit-transform: translate(-50%, 0) scale(3);
+      /* -webkit-transform: translate(0, -50%) perspective(500px) translateZ(250px); */
+      will-change: transform;
       transition:
       transform .5s,
       -webkit-transform .5s,
