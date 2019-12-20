@@ -6,7 +6,7 @@
 }
 
 body {   
-   font: 100% Helvetica, Arial, sans-serif;
+   font-family: 'Roboto', Arial, sans-serif;
    width: 100%;
    padding: 0;
    margin: 0;
@@ -274,7 +274,8 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
    height: 100vh;
    padding-left: 0;
    list-style-type: none;
-   font-family: "Courier New", monospace;
+   /* font-family: "Courier New", monospace; */
+   letter-spacing: .2em;
 }
 
 /* Standardstil for listeelementene. Flyttes og skaleres til siden ved lukking */
@@ -388,7 +389,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
    #header.menu-opened #logo_header {
       left: 50%;
-      top: 20%;
+      top: 22%;
       transform: translate(-50%, 0) scale(3);
       -webkit-transform: translate(-50%, 0) scale(3);
       transition:
@@ -437,9 +438,15 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
    }
 }
 
-@media only screen and (min-height: 750px) {
+@media only screen and (max-height: 750px) {
    #header.menu-opened #logo_header {
-      top: 30%;
+      top: 25%;
+   }
+}
+
+@media only screen and (min-height: 650px) {
+   #header.menu-opened #logo_header {
+      top: 22%;
    }
 }
 
