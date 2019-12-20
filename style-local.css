@@ -271,7 +271,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
    align-items: center;
    flex-direction: column;
    text-align: center;
-   height: 100vh;
+   height: 100%;
    padding-left: 0;
    list-style-type: none;
    /* font-family: "Courier New", monospace; */
