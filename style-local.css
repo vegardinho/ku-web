@@ -38,7 +38,6 @@ body {
 #header.menu-opened {
    /* background-color: black; */
    transition: background-color .5s;
-   will-change: transform;
 }
 
 .search {
@@ -282,31 +281,21 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 /* Standardstil for listeelementene. Flyttes og skaleres til siden ved lukking */
 #mobil-overlay > ul > li {
    padding: 1em;
-   /* transform: scale(1.15) translate(-10%, -10%); */
-   /* -webkit-transform: scale(1.15) translate(-10%, -10%); */
    transform: scale(1.15) translateX(-10%);
    -webkit-transform: scale(1.15) translateX(-10%);
-
    opacity: 0;
    transition: 
-   /* padding 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99),  */
    opacity 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99),
    transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
    -webkit-transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
 
 /* Flytt elementer dit de egentlig skal være når menyen åpnes */
-/* TODO: bezier (sjekk lukking) */
 #mobil-overlay.menu-opened > ul > li {
-   /* padding: 1em; */
-   /* -webkit-transform: scale(1) translate(0, 0); */
-   /* transform: scale(1) translate(0, 0); */
    transform: scale(1) translateX(0);
    -webkit-transform: scale(1) translateX(0);
-
    opacity: 1;
    transition: 
-   /* padding 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99),  */
    opacity 0.8s cubic-bezier(0.4, 0.01, 0.165, 0.99),
    transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
    -webkit-transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
@@ -385,33 +374,18 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
       transform: scale(1); 
       -webkit-transform: scale(1);
-      /* transform: scale(1) translate(0, -50%); */
-      /* -webkit-transform: scale(1) translate(0, -50%); */
 
-      will-change: transform;
       transition:
       transform .5s,
-      -webkit-transform .5s,
-      left .5s, 
-      top .5s; 
+      -webkit-transform .5s;
    }
 
    #header.menu-opened #logo_header {
-      /* left: 50%; */
-      /* top: 22%; */
-      
-      /* transform: translate(-50%, 0) scale(3); */
-      /* -webkit-transform: translate(-50%, 0) scale(3); */
       transform: translate(50vw, 22vh) translate(-50%, 0) translate(-2em, -40px) scale(3);
-      -webkit-transform: translate(50vw, 22vh) translate(-50%, 0) translate(-2em, -40px) scale(3);
-
-      will-change: transform;
-
+      -webkit-transform: translate(50vw, 22vh) translate(-50%,0) translate(-2em,-40px) scale(3);
       transition:
       transform .5s,
-      -webkit-transform .5s,
-      left .5s, 
-      top .5s; 
+      -webkit-transform .5s;
    }
 
    #logo-black {
@@ -429,13 +403,9 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
       transition: opacity .5s cubic-bezier(0.04, 0.04, 0.12, 0.96) .6s;
    }
 
-   #header.menu-opened #logo_header #logo-black {
-      opacity: 0;
-   }
-
    #header.menu-opened #logo_header #logo-white {
       opacity: 1;
-      transition: opacity 0s;
+      transition: opacity .5s cubic-bezier(0.04, 0.04, 0.12, 0.96);
    }
 
    #nav {
@@ -455,21 +425,24 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
 @media only screen and (max-height: 750px) {
    #header.menu-opened #logo_header {
-      /* top: 25%; */
+      transform: translate(50vw, 25vh) translate(-50%, 0) translate(-2em, -40px) scale(3);
+      -webkit-transform: translate(50vw, 25vh) translate(-50%,0) translate(-2em,-40px) scale(3);
    }
 }
 
-@media only screen and (min-height: 650px) {
-   #header.menu-opened #logo_header {
-      /* top: 22%; */
-   }
-}
+/* @media only screen and (min-height: 650px) { */
+/*    #header.menu-opened #logo_header { */
+/*       top: 22%; */
+/*    } */
+/* } */
 
 @media only screen and (min-height: 850px) {
    #mobil-overlay > ul {
-      /* top: -1.5%; */
+      transform: translateY(-1.5vh);
    }
 
    #header.menu-opened #logo_header {
-      /* top: 30%; */
+      transform: translate(50vw, 33vh) translate(-50%, 0) translate(-2em, -40px) scale(3);
+      -webkit-transform: translate(50vw, 33vh) translate(-50%,0) translate(-2em,-40px) scale(3);
    }
+}
