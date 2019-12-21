@@ -38,6 +38,7 @@ body {
 #header.menu-opened {
    /* background-color: black; */
    transition: background-color .5s;
+   will-change: transform;
 }
 
 .search {
@@ -210,6 +211,7 @@ input[type=checkbox] {
    height: 100%;
    transition: all 0.3s ease-in, background 0.5s ease-in;
    transition-delay: 0.25s;
+   will-change: transform;
 }
 
 /* Fjern midterste strek i kryss */
@@ -371,13 +373,16 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
    #logo_header {
       position: absolute;
       height: 40px;
-      top: 40px;
+      top: 20px;
       left: 2em;
       z-index: 10;
-      transform: scale(1) translate(0, -50%);
-      -webkit-transform: scale(1) translate(0, -50%);
+
+      transform: scale(1); 
+      -webkit-transform: scale(1);
+      /* transform: scale(1) translate(0, -50%); */
+      /* -webkit-transform: scale(1) translate(0, -50%); */
+
       will-change: transform;
-      /* -webkit-transform: translate(0, -50%) perspective(500px) translateZ(0px); */
       transition:
       transform .5s,
       -webkit-transform .5s,
@@ -386,12 +391,16 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
    }
 
    #header.menu-opened #logo_header {
-      left: 50%;
-      top: 22%;
-      transform: translate(-50%, 0) scale(3);
-      -webkit-transform: translate(-50%, 0) scale(3);
-      /* -webkit-transform: translate(0, -50%) perspective(500px) translateZ(250px); */
+      /* left: 50%; */
+      /* top: 22%; */
+      
+      /* transform: translate(-50%, 0) scale(3); */
+      /* -webkit-transform: translate(-50%, 0) scale(3); */
+      transform: translate(50vw, 22vh) translate(-50%, 0) translate(-2em, -40px) scale(3);
+      -webkit-transform: translate(50vw, 22vh) translate(-50%, 0) translate(-2em, -40px) scale(3);
+
       will-change: transform;
+
       transition:
       transform .5s,
       -webkit-transform .5s,
@@ -440,21 +449,21 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
 @media only screen and (max-height: 750px) {
    #header.menu-opened #logo_header {
-      top: 25%;
+      /* top: 25%; */
    }
 }
 
 @media only screen and (min-height: 650px) {
    #header.menu-opened #logo_header {
-      top: 22%;
+      /* top: 22%; */
    }
 }
 
 @media only screen and (min-height: 850px) {
    #mobil-overlay > ul {
-      top: -1.5%;
+      /* top: -1.5%; */
    }
 
    #header.menu-opened #logo_header {
-      top: 30%;
+      /* top: 30%; */
    }
