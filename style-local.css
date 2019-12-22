@@ -241,25 +241,6 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
    background .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
 }
 
-/* Bakgrunn før trykk på knapp */
-#mobil-overlay {
-   position: absolute;
-   width: 100vw;
-   top: 0;
-   left: 0%;
-   height: 100vh;
-   margin-top: -100vh;
-   background: black;
-   transition: all 0.5s ease-in-out;
-   transition-delay: 0.15s;
-}
-
-#mobil-overlay.menu-opened {
-   transform: translateY(100vh);
-   transition: all 0.3s ease-in, background 0.5s ease-in;
-   transition-delay: 0.25s;
-}
-
 /* Stil for listen */
 #mobil-overlay > ul {
    position: absolute;
@@ -306,20 +287,37 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 }
 
 @media only screen and (max-width: 900px) {
+   /* Bakgrunn før trykk på knapp */
    #mobil-overlay {
       display: block;
+      position: absolute;
+      width: 100vw;
+      top: 0;
+      left: 0%;
+      height: 100%;
+      margin-top: -100%;
+      background: black;
+      transition: all 0.5s ease-in-out;
+      transition-delay: 0.15s;
    }
 
-   #mobil-overlay ul li a:hover {
-   color: #333332;
-}
+   #mobil-overlay.menu-opened {
+      transform: translateY(100%);
+      transition: all 0.3s ease-in, background 0.5s ease-in;
+      transition-delay: 0.25s;
+   }
 
-/* Stil for lenkene i listeelementene */
-#mobil-overlay ul li a {
-   color: #932822;
-   text-decoration: none;
-   font-size: 1.5em;
-}
+
+   #mobil-overlay ul li a:hover {
+      color: #333332;
+   }
+
+   /* Stil for lenkene i listeelementene */
+   #mobil-overlay ul li a {
+      color: #932822;
+      text-decoration: none;
+      font-size: 1.5em;
+   }
 
 
    .search {
