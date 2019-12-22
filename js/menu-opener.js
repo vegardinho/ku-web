@@ -1,5 +1,3 @@
-document.getElementById("overlay-input").addEventListener("click", addOpenedTag);
-
 // Setter riktig delay for åpning/lukking, og fjerner/legger til tag
 function addOpenedTag(event) {
    var overlay = document.getElementById("mobil-overlay");
@@ -10,13 +8,13 @@ function addOpenedTag(event) {
    if (overlayClasses.contains("menu-opened")) {
       var listElements = overlay.children[0].children;
       console.log(listElements);
-      var delay = 15;
+      var delay = 10;
 
       for (let i = listElements.length; i > 0; i--) {
 	 listElements[i-1].style.transitionDelay = `.${delay}s`;
 	 delay += 7;
-	 console.log(listElements[i-1].style.transitionDelay);
-	 console.log(listElements[i-1]);
+	 // console.log(listElements[i-1].style.transitionDelay);
+	 // console.log(listElements[i-1]);
       }
 
       overlayClasses.remove("menu-opened");
@@ -30,8 +28,8 @@ function addOpenedTag(event) {
       for (let i = 0; i < listElements.length; i++) {
 	 listElements[i].style.transitionDelay = `.${delay}s`;
 	 delay += 7;
-	 console.log(listElements[i].style.transitionDelay);
-	 console.log(listElements[i]);
+	 // console.log(listElements[i].style.transitionDelay);
+	 // console.log(listElements[i]);
       }
 
       overlayClasses.add("menu-opened");
@@ -39,3 +37,6 @@ function addOpenedTag(event) {
       contentClasses.add("menu-opened");
    }
 }
+
+document.getElementById("overlay-input").addEventListener("click", addOpenedTag);
+
