@@ -8,13 +8,14 @@ function addOpenedTag(event) {
    if (overlayClasses.contains("menu-opened")) {
       var listElements = overlay.children[0].children;
       console.log(listElements);
-      var delay = 10;
+      var delay = 0;
 
-      for (let i = listElements.length; i > 0; i--) {
-	 listElements[i-1].style.transitionDelay = `.${delay}s`;
-	 delay += 7;
-	 // console.log(listElements[i-1].style.transitionDelay);
-	 // console.log(listElements[i-1]);
+      for (let i = listElements.length - 1; i >= 0; i--) {
+	 listElements[i].style.transitionDelay = `${delay}s`;
+	 delay += .05;
+	 console.log(delay);
+	 console.log(listElements[i].style.transitionDelay);
+	 console.log(listElements[i]);
       }
 
       overlayClasses.remove("menu-opened");
