@@ -20,12 +20,21 @@ body {
    display: none;
 }
 
-#logo_header {
+#logo-white {
    display: none;
 }
 
+#logo-black {
+   display: none;
+}
+
+#logo-full {
+   height: 100%;
+   padding-left: 2%;
+}
+
 #header {
-   height: 100px;
+   height: 150px;
    background-repeat: no-repeat;
    color: black;
    width: 100%;
@@ -33,11 +42,20 @@ body {
    padding: 0;
 }
 
+#title_container {
+   text-align: center;
+   height: inherit;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+
 .search {
+   display: none;
+   position: absolute;
+   right: 50px;
    float: right;
-   /*	position: relative;
-   top: 57px;
-   right: 5px; */
 }
 
 #kultur-lenke {
@@ -51,21 +69,63 @@ body {
 
 #header h1 {
    font-size: 55px;
-}
-
-#nav {
-   padding-top: 2%;
-   margin-left: 2.8%;
-   float: left;
-   padding-left: 2%;
-}
-
-#nav ul {
    padding: 0;
+   margin: 0;
+   display: none;
+}
+
+#meny {
+   width: 55%;
+   padding: 0;
+   margin: 0;
+   float: right;
+   right: 0;
+   padding-right: 5%;
+   display: inline-block;
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+#meny ul {
+   padding: 0;
+   margin: 0;
    list-style-type: none;
    text-align: center;
    font-weight: bold;
    font-size: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+#nav {
+   display: none;
+   width: 40%;
+   left: 50%;
+   position: relative;
+   transform: translateX(-50%);
+   padding: 0;
+   margin: 0;
+}
+
+#nav ul {
+   padding: 0;
+   padding-bottom: 30px;
+   margin: 0;
+   list-style-type: none;
+   text-align: center;
+   font-weight: bold;
+   font-size: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
+#content {
+   padding-left: 5%;
+   padding-right: 5%;
+   padding-top: 5%;
 }
 
 a:link {
@@ -120,8 +180,8 @@ input {
 
 
 /* Ikke vis overlay på desktop */
-#mobil-overlay {
-   display: none;
+#meny {
+   /* display: none; */
 }
 
 /* Ikke vis checkbox (knapp) */
@@ -132,12 +192,16 @@ input[type=checkbox] {
 
 @media only screen and (max-width: 900px) {
    #logo_header {
-   display: inherit;
-}
+      display: inherit;
+   }
 
    #logo-white {
-   display: none;
-}
+      display: none;
+   }
+
+   #logo-full {
+      display: none;
+   }
 
 
    /* Definer kryss/streker for knapp */
@@ -203,12 +267,38 @@ input[type=checkbox] {
       -webkit-transform-origin: 50% 50%;
    }
 
+   /* Bakgrunn før trykk på knapp */
+   #meny {
+      transform: none;
+      padding-right: 0;
+      float: none;
+      display: block;
+      position: absolute;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      height: 100%;
+      margin-top: -100vh;
+      background: black;
+      transition: all 0.5s ease-in-out;
+      transition-delay: 0.15s;
+   }
+
+   #meny.menu-opened {
+      transform: translateY(100vh);
+      transition: all 0.3s ease-in, background 0.5s ease-in;
+      transition-delay: 0.25s;
+   }
+
    /* Stil for listen */
-   #mobil-overlay > ul {
+   #meny > ul {
+      font-weight: normal;
+      font-size: 16px;
       position: absolute;
       width: 100%;
       margin: 0;
-      padding-top: 15vh;
+      /* padding-top: 15vh; */
+      padding-top: 22vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -222,7 +312,7 @@ input[type=checkbox] {
    }
 
    /* Standardstil for listeelementene. Flyttes og skaleres til siden ved lukking */
-   #mobil-overlay > ul > li {
+   #meny > ul > li {
       padding: 1em;
       transform: scale(1.15) translateX(-10%);
       -webkit-transform: scale(1.15) translateX(-10%);
@@ -234,7 +324,7 @@ input[type=checkbox] {
    }
 
    /* Flytt elementer dit de egentlig skal være når menyen åpnes */
-   #mobil-overlay.menu-opened > ul > li {
+   #meny.menu-opened > ul > li {
       transform: scale(1) translateX(0);
       -webkit-transform: scale(1) translateX(0);
       opacity: 1;
@@ -285,33 +375,12 @@ input[type=checkbox] {
       background .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
    }
 
-   /* Bakgrunn før trykk på knapp */
-   #mobil-overlay {
-      display: block;
-      position: absolute;
-      width: 100vw;
-      top: 0;
-      left: 0%;
-      height: 100%;
-      margin-top: -100vh;
-      background: black;
-      transition: all 0.5s ease-in-out;
-      transition-delay: 0.15s;
-   }
-
-   #mobil-overlay.menu-opened {
-      transform: translateY(100vh);
-      transition: all 0.3s ease-in, background 0.5s ease-in;
-      transition-delay: 0.25s;
-   }
-
-
-   #mobil-overlay ul li a:hover {
+   #meny ul li a:hover {
       color: #333332;
    }
 
    /* Stil for lenkene i listeelementene */
-   #mobil-overlay ul li a {
+   #meny ul li a {
       color: #932822;
       text-decoration: none;
       font-size: 1.5em;
@@ -331,6 +400,7 @@ input[type=checkbox] {
    }
 
    #header h1 {
+      display: initial;
       font-family: 'Roboto', Arial;
       left: 0;
       right: 0;
@@ -348,9 +418,11 @@ input[type=checkbox] {
    }
 
    #content {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
       width: 80%;
       margin: auto;
-      text-align: center;
       opacity: 1;
       transition: opacity .9s cubic-bezier(0.04, 0.04, 0.12, 0.96) .55s;
    }
@@ -408,15 +480,6 @@ input[type=checkbox] {
       transition: opacity .5s cubic-bezier(0.04, 0.04, 0.12, 0.96) .6s;
    }
 
-   #title_container {
-      text-align: center;
-      height: inherit;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-   }
-
    #header.menu-opened #logo_header #logo-white {
       opacity: 1;
       transition: opacity .5s cubic-bezier(0.04, 0.04, 0.12, 0.96);
@@ -428,7 +491,7 @@ input[type=checkbox] {
 }
 
 @media only screen and (max-height: 600px) and (max-width: 900px) {
-   #mobil-overlay > ul {
+   #meny > ul {
       padding-top: 55%;
    }
 
@@ -445,7 +508,7 @@ input[type=checkbox] {
 }
 
 @media only screen and (min-height: 850px) and (max-width: 900px) {
-   #mobil-overlay > ul {
+   #meny > ul {
       transform: translateY(-1.5vh);
    }
 
