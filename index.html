@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="no">
 
    <head>
-      <title>KUs websider</title>
+      <title>Kulturutvalget</title>
       <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="style-local.css" media="screen" title="Normal" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,70 +18,42 @@ $(window).on('load', function() {
    $('html').removeClass('hidden'); 
 });  
       </script>
-
+      %META%
    </head>
 
    <body>
 
-      <div id="header">
-	 <a id="logo_header" href="header.html">
-	    <img id="logo-black" src="img/ku-logo.png">
-	    <img id="logo-white" src="img/ku-logo-hvit.png">
-	    <img id="logo-full" src="img/ku-svart-full.png">
-	 </a>
-	 <div id="title_container">
-	    <a id="kultur-lenke" href="header.html">
-	       <h1>KULTURUTVALGET</h1>
+
+      <div id="page">
+
+	 <div id="header">
+	    <div id="title_container">
+	       <a id="kultur-lenke" href="/">
+		  <h1>KULTURUTVALGET</h1>
+	       </a>
+	    </div>
+
+	    <a id="logo_header" href="/">
+	       <img id="logo-black" src="img/ku-logo.png">
+	       <img id="logo-white" src="img/ku-logo-hvit.png">
+	       <img id="logo-full" src="img/ku-svart-full.png">
 	    </a>
+
+	    <input type="checkbox" id="overlay-input"/>
+	    <label for="overlay-input" id="overlay-button">
+	       <span>
+	       </span>
+	    </label>
+
+	    <div id="nav">
+	       <ul>
+		  <li><a href="/arrangement">Arrangement</a></li>
+		  <li><a href="/filmklubben">Filmklubben</a></li>
+		  <li><a href="/om_oss">Om oss</a></li>
+		  <li><a href="/kontakt">Kontakt</a></li>
+	       </ul>
+	    </div>
+
 	 </div>
-	 <input type="checkbox" id="overlay-input"/>
-	 <label for="overlay-input" id="overlay-button">
-	    <span>
-	    </span>
-	 </label>
-	 <div id="meny">
-	    <ul>
-	       <li><a href="/arrangement">Arrangement</a></li>
-	       <li><a href="/filmklubben">Filmklubben</a></li>
-	       <li><a href="/om_oss">Om oss</a></li>
-	       <li><a href="/kontakt">Kontakt</a></li>
-	    </ul>
-	 </div>
-      </div>
 
-
-      <hr class="hidden" />
-      <!-- <div id="nav"> -->
-	<!--  <ul> -->
-	<!--     <li><a href="/om_oss">Om oss</a></li> -->
-	<!--     <li><a href="/kontakt">Kontakt</a></li> -->
-	<!--     <li><a href="/arrangement">Arrangement</a></li> -->
-	<!--     <li><a href="/filmklubben">Filmklubben</a></li> -->
-	<!--      <li><a href="/intern">Interne sider</a></li> --> 
-	<!--  </ul> -->
-	<!--  <hr/> -->
-      <!-- </div> -->
-
-      <hr class="hidden" />
-      <div id="content">
-
-	 <form method="post" action="/dosearch.pl" class="search">
-	    <p><label>Søk: <input type="text" name="query"/></label></p>
-	 </form>
-
-
-	 <h1 class="title" id="Velkommen_til_Kulturutvalget">
-	    <a href="#Velkommen_til_Kulturutvalget" class="title-anchor">
-	       Velkommen til Kulturutvalget</a>
-	 </h1>
-
-	 <p>Her finner du informasjon om oss og Studentersamfundet Filmklubb. Er det noe du ikke finner, trykk på kontakt-linken og kontakt oss!</p>
-
-
-	 <p>Lenker: <a href="Start">Start</a></p>
-      </div>
-      <hr class="hidden" />
-      <div id="footer">for en &aring;ndelig gjenreising av land og folk!</a></div>
-      </div>
-   </body>
-</html>
+	 <div id="content">

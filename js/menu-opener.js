@@ -1,6 +1,6 @@
 // Setter riktig delay for åpning/lukking, og fjerner/legger til tag
 function addOpenedTag(event) {
-   var overlay = document.getElementById("mobil-overlay");
+   var overlay = document.getElementById("nav");
    var overlayClasses = overlay.classList;
    var headerClasses = document.getElementById("header").classList;
    var contentClasses = document.getElementById("content").classList;

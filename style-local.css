@@ -29,8 +29,11 @@ body {
 }
 
 #logo-full {
-   height: 100%;
-   padding-left: 2%;
+   height: 75%;
+   margin-left: 5%;
+   top: calc(50% + 10px);
+   position: relative;
+   transform: translateY(-50%);
 }
 
 #header {
@@ -74,20 +77,18 @@ body {
    display: none;
 }
 
-#meny {
-   width: 55%;
+#nav {
    padding: 0;
    margin: 0;
-   float: right;
-   right: 0;
    padding-right: 5%;
    display: inline-block;
    position: relative;
    top: 50%;
    transform: translateY(-50%);
+   float: right;
 }
 
-#meny ul {
+#nav ul {
    padding: 0;
    margin: 0;
    list-style-type: none;
@@ -96,23 +97,26 @@ body {
    font-size: 20px;
    display: flex;
    flex-direction: row;
-   justify-content: space-around;
 }
 
-#nav {
-   display: none;
-   width: 40%;
-   left: 50%;
-   position: relative;
-   transform: translateX(-50%);
-   padding: 0;
-   margin: 0;
+#nav ul li {
+   padding-left: 2%;
 }
+
+/* #nav { */
+/*    display: none; */
+/*    width: 40%; */
+/*    left: 50%; */
+/*    position: relative; */
+/*    transform: translateX(-50%); */
+/*    padding: 0; */
+/*    margin: 0; */
+/* } */
 
 #nav ul {
    padding: 0;
-   padding-bottom: 30px;
    margin: 0;
+   padding-bottom: 3%;
    list-style-type: none;
    text-align: center;
    font-weight: bold;
@@ -176,12 +180,6 @@ input {
 
 .ins {
    background: #F9FF4A;
-}
-
-
-/* Ikke vis overlay på desktop */
-#meny {
-   /* display: none; */
 }
 
 /* Ikke vis checkbox (knapp) */
@@ -268,7 +266,7 @@ input[type=checkbox] {
    }
 
    /* Bakgrunn før trykk på knapp */
-   #meny {
+   #nav {
       transform: none;
       padding-right: 0;
       float: none;
@@ -284,14 +282,14 @@ input[type=checkbox] {
       transition-delay: 0.15s;
    }
 
-   #meny.menu-opened {
+   #nav.menu-opened {
       transform: translateY(100vh);
       transition: all 0.3s ease-in, background 0.5s ease-in;
       transition-delay: 0.25s;
    }
 
    /* Stil for listen */
-   #meny > ul {
+   #nav > ul {
       font-weight: normal;
       font-size: 16px;
       position: absolute;
@@ -312,7 +310,7 @@ input[type=checkbox] {
    }
 
    /* Standardstil for listeelementene. Flyttes og skaleres til siden ved lukking */
-   #meny > ul > li {
+   #nav > ul > li {
       padding: 1em;
       transform: scale(1.15) translateX(-10%);
       -webkit-transform: scale(1.15) translateX(-10%);
@@ -324,7 +322,7 @@ input[type=checkbox] {
    }
 
    /* Flytt elementer dit de egentlig skal være når menyen åpnes */
-   #meny.menu-opened > ul > li {
+   #nav.menu-opened > ul > li {
       transform: scale(1) translateX(0);
       -webkit-transform: scale(1) translateX(0);
       opacity: 1;
@@ -333,6 +331,18 @@ input[type=checkbox] {
       transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), 
       -webkit-transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
    }
+
+   #nav ul li a:hover {
+      color: #333332;
+   }
+
+   /* Stil for lenkene i listeelementene */
+   #nav ul li a {
+      color: #932822;
+      text-decoration: none;
+      font-size: 1.5em;
+   }
+
 
    /* Gjør kryss/streker (knapp) hvit */
    #overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after { 
@@ -373,17 +383,6 @@ input[type=checkbox] {
       transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1608s,
       -webkit-transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1608s,
       background .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
-   }
-
-   #meny ul li a:hover {
-      color: #333332;
-   }
-
-   /* Stil for lenkene i listeelementene */
-   #meny ul li a {
-      color: #932822;
-      text-decoration: none;
-      font-size: 1.5em;
    }
 
    .search {
@@ -485,13 +484,10 @@ input[type=checkbox] {
       transition: opacity .5s cubic-bezier(0.04, 0.04, 0.12, 0.96);
    }
 
-   #nav {
-      display: none;
-   }
 }
 
 @media only screen and (max-height: 600px) and (max-width: 900px) {
-   #meny > ul {
+   #nav > ul {
       padding-top: 55%;
    }
 
@@ -508,7 +504,7 @@ input[type=checkbox] {
 }
 
 @media only screen and (min-height: 850px) and (max-width: 900px) {
-   #meny > ul {
+   #nav > ul {
       transform: translateY(-1.5vh);
    }
 
